@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === "production") {
     console.log(process.env.NODE_ENV);
     res.send("api is running");
   });
-
-app.listen(6500, () => {
+let port = process.env.PORT || 44862;
+app.listen(port, () => {
   console.log("Server is online");
 });
