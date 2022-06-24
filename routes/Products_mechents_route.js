@@ -97,7 +97,7 @@ router.post("/add-BasicCategory", async (req, res) => {
     .then(() => res.json("Added It"))
     .catch((err) => res.json(" category errors :" + err));
 });
-router.get("/selectSubCategory", async (req, res) => {
+router.post("/select-SubCategory", async (req, res) => {
   const { categoryNameBasic } = req.body;
   const idSubCategoryNameBasic = await HauptCategory.findOne({
     categoryNameBasic,

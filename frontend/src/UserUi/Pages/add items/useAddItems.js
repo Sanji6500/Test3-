@@ -50,6 +50,17 @@ const useAddItems = (validate) => {
       [name]: value,
     });
   };
+  const ClearSubCategoryItems = () => {
+    setValues({
+      hauptCategories: "",
+      subCategory: "",
+      productName: "",
+      fileUpload: "",
+      productBarcode: "",
+      productDescription: "",
+    });
+    setFilename("Choose File");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -98,8 +109,8 @@ const useAddItems = (validate) => {
     handleSubmit,
     handleChange,
     getFileName,
-    setMessage,
 
+    ClearSubCategoryItems,
     values,
     errors,
     Message,

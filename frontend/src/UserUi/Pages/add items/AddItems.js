@@ -29,12 +29,14 @@ function AddItems() {
   const url1 = "/merchants/select-BasicCategory";
 
   let hauptCategories = useAxiosGet(url1);
+  let SubCategoryitems = [];
 
   const {
     NumberOnly,
     handleChange,
     handleSubmit,
     getFileName,
+    ClearSubCategoryItems,
 
     values,
     errors,
@@ -48,18 +50,22 @@ function AddItems() {
         header: { "Content-Type": "application/json" },
       };
       const handleSelectValue = async (e) => {
-        const Data = {
-          categoryNameBasic: values.hauptCategories,
-        };
-        const result = await axios.get(
-          "/merchants/selectSubCategory",
-          Data,
-          config
-        );
+        try {
+          const Data = {
+            categoryNameBasic: values.hauptCategories,
+          };
+          const result = await axios.post(
+            "/merchants/select-SubCategory",
+            Data
+          );
+          result.data.map((item) => {
+            SubCategoryitems.push(item.subCategoryNameBasic);
+          });
 
-        result.data.map((item) => {
-          setSubCategoryitems([item.subCategoryNameBasic]);
-        });
+          setSubCategoryitems(SubCategoryitems);
+        } catch (e) {
+          console.log(e);
+        }
       };
       handleSelectValue();
     }
@@ -103,6 +109,7 @@ function AddItems() {
                     name="hauptCategories"
                     onSelect={(e) => {
                       handleChange(e);
+                      if (values.subCategory) ClearSubCategoryItems();
                     }}
                   />
                 )}
