@@ -24,10 +24,7 @@ function Products_api() {
     content = products.data.map((product) => (
       <div className="productCard" key={product._id}>
         <div className="productImage">
-          <img
-            alt=""
-            src={"http://localhost:6500/" + product.product_id.productImages}
-          />
+          <img alt="" src={product.product_id.productImages} />
           <ul className="Action">
             <li>
               <AiFillHeart />
