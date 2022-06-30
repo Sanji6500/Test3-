@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Brochure from "./UserUi/Pages/brochure/brochure";
 
 import Login from "./UserUi/Pages/Login/Login";
-import SignIn from "./UserUi/Pages/SignPage/SignIn";
+import SignIn from "./UserUi/Pages/SignPage/SignUp";
 import AddItems from "./UserUi/Pages/add items/AddItems";
 import AddAdvertis from "./UserUi/Pages/advertisements/AddAdvertis";
 
@@ -20,7 +20,7 @@ function App() {
           <Route path="/AddVer" element={<AddAdvertis />} />
 
           <Route path="/Login" element={<Login />} />
-          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/SignUp" element={<SignIn />} />
         </Routes>
       </Router>
     </>

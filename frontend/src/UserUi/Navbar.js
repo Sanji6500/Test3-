@@ -114,12 +114,12 @@ function Navbar() {
                     </li>
                   ) : (
                     <li>
-                      <a onClick={RemoveToken}>
+                      <Link to="/SignUp">
                         <span className="icon-Dropdown">
                           <BiRegistered size="1em" />
                         </span>
                         registration
-                      </a>
+                      </Link>
                     </li>
                   )}
                 </ul>

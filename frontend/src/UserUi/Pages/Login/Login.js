@@ -18,10 +18,10 @@ const Login = () => {
         <div class="signin-content">
           <div class="signin-image">
             <img src={SignIn} alt="sing up image" />
-            <Link to="/SignIn"> Create an account</Link>
+            <Link to="/SignUp"> Create an account</Link>
           </div>
           <div class="signin-form">
-            <h2 class="form-title">Sign up</h2>
+            <h2 class="form-title">Sign in</h2>
             <form
               class="register-form"
               id="login-form"
