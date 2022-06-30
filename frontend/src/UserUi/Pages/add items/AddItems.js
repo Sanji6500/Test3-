@@ -193,6 +193,7 @@ function AddItems() {
                   className="custom-file-input Errors"
                   id="customFile"
                   name="fileUpload"
+                  accept="image/png, image/gif, image/jpeg"
                   onChange={(e) => {
                     getFileName(e);
                   }}
