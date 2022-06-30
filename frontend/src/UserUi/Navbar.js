@@ -19,7 +19,7 @@ function Navbar() {
     false
   );
   const location = useLocation();
-  const NotRenderNavbar = ["/Login", "/SignIn"];
+  const NotRenderNavbar = ["/Login", "/SignUp"];
   const Navigate = useNavigate();
 
   const RemoveToken = () => {
